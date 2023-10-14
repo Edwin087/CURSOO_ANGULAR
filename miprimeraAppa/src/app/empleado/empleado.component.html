@@ -38,3 +38,39 @@ No registrado<input
 />
 
 {{ getRegistro() }}
+
+<!-- Apuntes angular y typescript 
+Comandos de angular
+Para instalar angular pero ya instalado nodejs…en cmd se ejecuta como administrador: npm install -g @angular/cli
+Cuando no tenemos la carpeta de node_modules se ejecuta el comando: npm install.
+Crear un espacio de trabajo y una aplicación inicial: ng new my-app
+Ejecute la aplicación: cd my-app y para ejecutar al navegador: ng serve –open
+Para detener la ejecución con: CONTROL C
+Error en la consola de VStudio code [ ejecución de  scripts está deshabilitada en este sistema.] agrega el siguiente comando en widows PowerShell:   set-executionPolicy unrestricted
+Para instalar boostrap: npm install bootstrap –save  …….. ….y especificar en el archivo angular.js en "styles": y le agregamos "node_modules/bootstrap/dist/css/bootstrap.min.css" Y en  "scripts": le pegamos lo mismo pero con extensión js
+
+………..
+Para crear componentes es: ng generate component empleado  y de forma abreviada ng g c empleado
+
+Para crear componentes inline: ng generate component empleado  y de forma abreviada ng g c ejemplobotar -s  -t 
+
+
+
+
+
+
+COMANDOS TYPESCRIPT
+https://softwarecrafters.io/typescript/typescript-tutorial-javascript-introduccion
+Instalar typescript en la consola cmd: npm install -g typescript
+Para comprobar que la instalación se ha realizado correctamente ejecuta: tsc –v
+En cmd dentro del directorio-carpeta se crea un nuevo proyecto con: mkdir Hola_mundo
+Para ejecutar hay que compilar con el comando en la terminal de vscode al que quiere ejecutar: tsc funciones.ts
+Para aclarar que estamos trabajando con un proyecto de typescript : tsc  -init nos crea un archivo de configuración .json
+Para convertir en automático los archivos ts en js con el comando: tsc –w hará en automático cualquier cambio en los archivo que hagamos.
+
+Para inicializar nuestra aplicación, empaquetador de módulos, permite generar un archivo único con todos aquellos módulos que necesita la aplicación para funcionar a lado del servidor: npm install webpack webpack-cli webpack-dev-server
+Para poder cargar las clases con el comando: npm install typescript ts-loader --save-dev
+
+
+-->
+
