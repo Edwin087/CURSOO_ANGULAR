@@ -1,0 +1,40 @@
+<p>Nombre: {{ nombre + " Geovanny" }}</p>
+<p>Apellido: {{ apellido }}</p>
+<!-- operador ternario condicion  ? valor si verdad:valor si falso -->
+<p>Edad: {{ edad < 18 ? "Menor de edad" : "Es mayor de edad" }}</p>
+<!-- interpolacion {{ empresa }} -->
+<p>Empresa: {{ empresa }}</p>
+<!--Introduce la empresa
+ <input type="text" #empresa (keyup)="(0)" [disabled]="habilitacionCuadro" /> -->
+
+<!-- binding bidireccional -->
+<!-- creamos tipo event bindin -->
+Introduce la empresa
+<input type="text" [(ngModel)]="empresa" />
+
+<!--se crea un Binding con [] y es = a la propiedad creada en ts-->
+<br />
+<br />
+<!--<input type="button" name="" id="" value="Click" (click)="llamaEmpresa(empresa.value)">-->
+
+{{ textoRegistro }} <br />
+
+Registrado<input
+  type="radio"
+  name="nregistro"
+  id="registro"
+  value="si"
+  [checked]="usoRegistrado"
+  (click)="setUsuarioRegistrado($event)"
+/>
+<!-- con un $event para pasar el evento -->
+<br />
+No registrado<input
+  type="radio"
+  value="no"
+  name="nregistro"
+  id=""
+  (click)="setUsuarioRegistrado($event)"
+/>
+
+{{ getRegistro() }}
