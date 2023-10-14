@@ -1,12 +1,41 @@
 <h1>{{ title }}</h1>
-<form action="">
-  Numero1<input type="text" name="numero1" id="" [(ngModel)]="numero1" /> <br />
-  <br />
-  Numero2
-  <input type="text" name="numero2" id="" [(ngModel)]="numero2" /> <br />
-  <br />
+<div class="container">
+  <form action="">
+    Numero1<input type="number" name="numero1" id="" [(ngModel)]="numero1" />
+    <br />
+    <br />
+    <!-- bindin bidireccional -->
+    Numero2
+    <input type="number" name="numero2" id="" [(ngModel)]="numero2" /> <br />
+    <br />
 
-  <input type="submit" value="sumar" />
-</form>
-
+    <input
+      type="submit"
+      value="sumar"
+      (click)="sumar()"
+      class="btn btn-success"
+    />
+    &nabla;
+    <input
+      type="submit"
+      value="restar"
+      (click)="restar()"
+      class="btn btn-primary"
+    />&nabla;
+    <input
+      type="submit"
+      value="multiplicacion"
+      (click)="multiplicacion()"
+      class="btn btn-info"
+    />
+    &nabla;
+    <input
+      type="submit"
+      value="divicion"
+      (click)="divicion()"
+      class="btn btn-warning"
+    />
+  </form>
+</div>
+<!-- interpolacion -->
 <p>Resultado: {{ resultado }}</p>
