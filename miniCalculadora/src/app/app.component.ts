@@ -23,4 +23,9 @@ export class AppComponent {
   divicion(): void {
     this.resultado = this.numero1 / this.numero2;
   }
+  divicion2(): void {
+    this.resultado = this.numero1 / this.numero2;
+  }
+
+  // por cambios
 }
