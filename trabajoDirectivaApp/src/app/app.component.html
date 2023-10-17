@@ -3,7 +3,10 @@
   Nombre:<input type="text" name="nombre" id="" [(ngModel)]="nombre" /><br />
   <br />
   Apellido:
-  <input type="text" name="apellido" id="" [(ngModel)]="apellido" /><br /><br />
+  <input type="text" name="apellido" id="" [(ngModel)]="apellido" />
+  Cargo:
+  <input type="text" name="cargo" id="cargo" [(ngModel)]="cargo" />
+  <br /><br />
   <input
     type="submit"
     name=""
@@ -13,8 +16,23 @@
   />
 </form>
 <br />
+
 <p *ngIf="registrado; else sinRegistrar">
-  {{ mensaje }} con el nombre de {{ nombre }} {{ apellido }}
+  {{ mensaje }} con el nombre de {{ nombre }} {{ apellido }} y tiene del cargo
+  de
+  <!-- operador ternario cargo =='director' ?  'red' :'black' es lo mismo que decir if (cargo =='director') console.log('reg') else console.log('black') forma con [ngStyle] -->
+  <!-- <span
+    [ngStyle]="{
+      color: cargo == 'director' || cargo == 'Director' ? 'red' : 'black'
+    }"
+    >{{ cargo }}</span
+  > -->
+
+  <!-- forma con  -->
+  <span
+    [ngClass]="{ paraDirectores: cargo == 'director' || cargo == 'Director' }"
+    >{{ cargo }}</span
+  >
 </p>
 
 <!-- no carga, por defecto su contenido con ng-template y se va a mostrar solo si la condicion no se clumple con un else -->
