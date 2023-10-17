@@ -63,14 +63,9 @@
 </div>
 <br />
 <br />
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let empleado of empleados; let i = index">
-        {{ i + 1 }}:{{ empleado.nombre }} {{ empleado.apellido }}
-        {{ empleado.cargo }}{{ empleado.salario }}
-      </div>
-    </div>
-  </div>
-</div>
+<!-- componente hijo le ponemos dentro de este comoponente padre Comunicación entre componentes, le damos un nombre identificativo a las variables en este caso empleado e i dentro de [] que vamos a pasar al componente hijo.. esto luego nos vamos a la clase del componente hijo a espesificar-->
+<app-empleadohijo-c
+  *ngFor="let empleado of empleados; let i = index"
+  [empleadoDeLista]="empleado"
+  [indice]="i"
+></app-empleadohijo-c>

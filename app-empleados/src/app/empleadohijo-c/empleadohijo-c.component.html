@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <!-- Aqui espesificamos las variables que se hizo referencia del componente padre que estas eran empleadoDeLista e indice -->
+      <div>
+        {{ indice + 1 }}:{{ empleadoDeLista.nombre }}
+        {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo
+        }}{{ empleadoDeLista.salario }}
+      </div>
+      <!-- del hijo al padre siguiendo la documentación -->
+      <app-caracteristicas-empleado-c
+        (caracteristicasEmpleado)="agragarCaracteristica($event)"
+      ></app-caracteristicas-empleado-c>
+
+      <ul style="list-style: none">
+        <li *ngFor="let caracteristica of arrayCaracteristas">
+          {{ caracteristica }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

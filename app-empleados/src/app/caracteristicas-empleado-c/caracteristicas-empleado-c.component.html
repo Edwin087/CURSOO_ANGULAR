@@ -1,0 +1,9 @@
+<label>Caracteristica:</label>
+<!-- nuevaCaracteristica es un identificativo que recoje la información del imnput lo que agregemos -->
+<input type="text" #nuevaCaracteristica />
+<button
+  (click)="agregaCaracteristicas(nuevaCaracteristica.value)"
+  class="btn btn-primary"
+>
+  Añadir Caracteristica
+</button>
