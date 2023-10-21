@@ -15,6 +15,6 @@ export class CaracteristicasEmpleadoCComponent {
   agregaCaracteristicas(value: string) {
     //hacemos uso del SERVICIO 3 antes de agregar caracteristicas para este ejemplo
     //this.miServicioo.muestraMensaje(value);
-    //this.caracteristicasEmpleado.emit(value);
+    this.caracteristicasEmpleado.emit(value);
   }
 }
