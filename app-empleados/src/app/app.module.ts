@@ -14,6 +14,10 @@ import { ContactoComponentComponent } from './contacto-component/contacto-compon
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+import { dataServices } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 //1 array de objetos para Routing o enrutamiento
 const appRoutes: Routes = [
@@ -23,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'contacto', component: ContactoComponentComponent },
   //especificamos con el id para que reciba ese parametro al l pasar a actualiza
   { path: 'actualiza/:id', component: ActualizaComponentComponent },
+  { path: 'login', component: LoginComponent },
   // páginas de error personalizadas para web que no existen en nuestra aplicación y tiene que estar al ultimo, con esto ** decimos que culaquier cosa diferente de la parte superior ir a la ruta error
   { path: '**', component: ErrorPersonalizadoComponent },
 ];
@@ -38,10 +43,23 @@ const appRoutes: Routes = [
     QuienesComponetComponent,
     ContactoComponentComponent,
     ActualizaComponentComponent,
+    LoginComponent,
   ],
   // 2 para utilizar las rutas en  RouterModule.forRoot()
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
-  providers: [ServicioEmpleadosService, EmpledosService],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    //importamos HttpClientModule para enviar desde la paguina los datos a la base de datos
+    HttpClientModule,
+  ],
+  //registro de services
+  providers: [
+    ServicioEmpleadosService,
+    EmpledosService,
+    dataServices,
+    LoginService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

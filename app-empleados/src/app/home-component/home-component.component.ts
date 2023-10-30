@@ -18,7 +18,14 @@ export class HomeComponentComponent {
     //this.empleados = this.empleadoServicio.empleados;
   }
   ngOnInit(): void {
-    this.empleados = this.empleadoServicio.empleados;
+    // this.empleados = this.empleadoServicio.empleados;
+    //para cargar lainformacion de empleados service de la BBDD,con subscribe vigilamos lo que hace el observable actulaizar, modificacion etc
+    this.empleadoServicio.obtenrEmpleados().subscribe((miEmplados) => {
+      console.log(miEmplados);
+      this.empleados = Object.values(miEmplados);
+      //le pasamos la informacion  agregada
+      this.empleadoServicio.setEmpleados(this.empleados);
+    });
   }
   empleados: Empleado[] = [];
 
