@@ -1,5 +1,5 @@
 # CURSOO_ANGULAR
- # ngfor
+ . ngfor
  # interpolacion
  ngModel
  @Input(padreAhijo)
