@@ -18,6 +18,8 @@ import { dataServices } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
+//importamos las cookie
+import { CookieService } from 'ngx-cookie-service';
 
 //1 array de objetos para Routing o enrutamiento
 const appRoutes: Routes = [
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
   //especificamos con el id para que reciba ese parametro al l pasar a actualiza
   { path: 'actualiza/:id', component: ActualizaComponentComponent },
   { path: 'login', component: LoginComponent },
+  //{path:'logout'}
   // páginas de error personalizadas para web que no existen en nuestra aplicación y tiene que estar al ultimo, con esto ** decimos que culaquier cosa diferente de la parte superior ir a la ruta error
   { path: '**', component: ErrorPersonalizadoComponent },
 ];
@@ -59,6 +62,7 @@ const appRoutes: Routes = [
     EmpledosService,
     dataServices,
     LoginService,
+    CookieService,
   ],
   bootstrap: [AppComponent],
 })
