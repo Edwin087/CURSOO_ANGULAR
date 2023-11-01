@@ -1,6 +1,6 @@
 # CURSOO_ANGULAR
- ngfor
- interpolacion
+ # ngfor
+ # interpolacion
  ngModel
  @Input(padreAhijo)
  Output(hijoApadre)
